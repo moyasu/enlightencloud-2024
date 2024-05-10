@@ -1,0 +1,11 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "liusu-sklearn-irisv2"
+  namespace: kubeflow-user-example-com
+spec:
+  predictor:
+    sklearn:
+      protocolVersion: "v2"
+      storageUri: "http://10.0.0.238:8080/model.tar"
+      image: "kserve/sklearnserver:v0.11.2"
